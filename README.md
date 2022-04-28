@@ -1,46 +1,51 @@
 # Introduction
-This exercise will involve building a page for generating a quote for buying a specific cryptocoin.
-A quote is a set of numbers that indicate how much money a customer will pay/receive, including the relevant fees.
-Specifically, the page you need to build will be calculating how much USDC_EVMOS (a crypto coin) a customer will receive
+This exercise will involve building a page for generating and displaying a quote for buying a specific cryptocoin.
+A quote represents a fixed offer from the system indicating how much money a
+customer will pay/receive, including the relevant fees.
+
+The page that you need to build will be calculating how much USDC_EVMOS (a crypto coin) a customer will receive
 in exchange for a specific amount of USD. The page will calculate this by making a request to a provided REST API.
 You will not need to do any maths, only display the values you receive from the API.
-The docs for the endpoint of interest are hosted at
-https://api-qjoa5a5qtq-uc.a.run.app/redoc#operation/create_quote_quotes_post, the actual endpoint is
-`POST https://api-qjoa5a5qtq-uc.a.run.app/quotes`. You do not need to worry about the quote expiring in this exercise.
 
 ### Detailed exercise specification
-- You need to build a page in React that resembles the design presented here - **FIGMA LINK HERE**.
-  **Initially, do not worry about CSS/design and get the functionality working first.**
-- The page should allow the client to enter **either** the source USD amount **or** the target USDC_EVMOS amount.
-  Upon changing **either** of these amounts the page should make a request to the API to generate a quote with
-  the newly-entered value.
-  
-  The API supports generating a quote either using the source amount (USD) or the target amount (USDC_EVMOS),
-  please refer to the documentation of the API for more information.
+- You need to build a page that implements the design presented here -
+  https://www.figma.com/file/5ZybOy1X8cwb9WQeldIPu3/Bitlabs-test?node-id=0%3A1.
+  Your design needs to match the Figma mock exactly.
+- The page should allow the client to enter **either** the "You pay" amount **or** the "You receive" amount.
+  Upon changing **either** of these amounts the page should make a request to the API to generate a quote for
+  the newly-entered value. Depending on which field is updated the request made to the API will contain either
+  `source_amount` or `target_amount`. Please refer to the documentation of the API for more information.
+  - The docs for the endpoint of interest are hosted at
+https://api-qjoa5a5qtq-uc.a.run.app/redoc#operation/create_quote_quotes_post.
+  - The actual endpoint is
+`POST https://api-qjoa5a5qtq-uc.a.run.app/quotes`.
+- When the user loads the page, it should initially request the API to generate a quote for `source_amount="100.0"`.
+- In the context of this exercise the following fields returned by the API endpoint can be ignored:
+  - `id`
+  - `source_currency`
+  - `target_currency`
+  - `internal_fee_percent`
+  - `expires_at`
+- Here is how the fields on the page map to the API responses:
+  - **"You pay"** corresponds to the `source_amount` field in the API request/response
+  - **"You receive"** corresponds to the `target_amount` field in the API request/response
+  - **"Network fee"** corresponds to the `fiat_blockchain_fee` field in the API response
+  - **"c14 fee"** corresponds to the `absolute_internal_fee` field in the API response
+  - **"Total fee"** is the sum of the two fees above (this is the only bit of math that you need to do on the front-end)
 - We expect you to have at least some basic tests for your React code. Tests should be runnable using 
   the `yarn test` command.
-#### Bonus Points
-- Once you have the functionality working, you should try to get the design resemble the figma provided.
-- If you manage to get all of the above working, implement a spinner that should show while the front-end is
-  waiting on the REST API to respond.
 
-# Project Contents
+# Evaluation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Your submission will be evaluated on the following criteria:
 
-## Available Scripts
+- Your HTML/CSS closely matches the provided Figma mock
+- Functionality is correctly implemented
+- Modern React concepts used
+- Code clarity and structure
+- Functionality is well tested via automated tests (`yarn test`)
 
-In the project directory, you can run:
+# Submission
 
-### `yarn start`
-
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once you are happy with your solution, please create a `.zip` archive of the completed
+project directory and email it directly to us at `info@bitlabs.team`.
