@@ -7,7 +7,7 @@ The page that you need to build will be calculating how much USDC_EVMOS (a crypt
 in exchange for a specific amount of USD. The page will calculate this by making a request to a provided REST API.
 You will not need to do any maths, only display the values you receive from the API.
 
-### Detailed exercise specification
+# Detailed exercise specification
 - You need to build a page that implements the design presented here -
   https://www.figma.com/file/5ZybOy1X8cwb9WQeldIPu3/Bitlabs-test?node-id=0%3A1.
   Your design needs to match the Figma mock exactly.
