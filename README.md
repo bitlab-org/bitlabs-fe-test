@@ -32,8 +32,7 @@ https://api-qjoa5a5qtq-uc.a.run.app/redoc#operation/create_quote_quotes_post.
   - **"Network fee"** corresponds to the `fiat_blockchain_fee` field in the API response
   - **"c14 fee"** corresponds to the `absolute_internal_fee` field in the API response
   - **"Total fee"** is the sum of the two fees above (this is the only bit of math that you need to do on the front-end)
-- We expect you to have at least some basic tests for your React code. Tests should be runnable using 
-  the `yarn test` command.
+- We expect you to have tests for your React code. Tests should be runnable using the `yarn test` command.
 
 # Evaluation
 
