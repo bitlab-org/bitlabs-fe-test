@@ -10,7 +10,8 @@ You will not need to do any maths, only display the values you receive from the 
 # Detailed exercise specification
 - You need to build a page that implements the design presented here -
   https://www.figma.com/file/5ZybOy1X8cwb9WQeldIPu3/Bitlabs-test?node-id=0%3A1.
-  Your design needs to match the Figma mock exactly.
+  Your design needs to match the Figma mock closely but don't worry about making it pixel perfect.
+- Your solution does not need to implement currency dropdowns, keep them unclickable.
 - The page should allow the client to enter **either** the "You pay" amount **or** the "You receive" amount.
   Upon changing **either** of these amounts the page should make a request to the API to generate a quote for
   the newly-entered value. Depending on which field is updated the request made to the API will contain either
