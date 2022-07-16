@@ -54,6 +54,7 @@ Your submission will be evaluated on the following criteria:
 - Modern React concepts used
 - Code clarity and structure
 - Functionality is tested via automated tests (`yarn test`)
+- **BONUS** (Optional) Solution implemented via isolated Storybook components
 
 # Submission
 
